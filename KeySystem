@@ -10,6 +10,8 @@ local UICorner = Instance.new("UICorner")
 local TextButton_2 = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
+local KeyCode = "BetaTester"
+
 --Properties:
 
 KeyMenu.Name = "KeyMenu"
@@ -100,7 +102,7 @@ TextButton_2.Text = "Submit"
 TextButton_2.TextColor3 = Color3.fromRGB(193, 193, 193)
 TextButton_2.TextSize = 20.000
 TextButton_2.MouseButton1Click:Connect(function()
-	if TextBox.Text == loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/Key", true))(); then
+	if TextBox.Text == KeyCode then
 		KeyMenu:Destroy()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
 	else
