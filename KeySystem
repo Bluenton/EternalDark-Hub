@@ -11,6 +11,7 @@ local TextBox = Instance.new("TextBox")
 local UICorner = Instance.new("UICorner")
 local TextButton_2 = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
+local KeyCode = "TestCode"
 
 --Properties:
 
@@ -46,7 +47,6 @@ TextButton.Text = "X"
 TextButton.TextColor3 = Color3.fromRGB(111, 111, 111)
 TextButton.TextSize = 14.000
 TextButton.MouseButton1Click:Connect(function()
-	print("Destroyed")
 	KeyMenu:Destroy()
 end)
 
@@ -104,6 +104,13 @@ TextButton_2.Font = Enum.Font.SciFi
 TextButton_2.Text = "Submit"
 TextButton_2.TextColor3 = Color3.fromRGB(193, 193, 193)
 TextButton_2.TextSize = 20.000
+TextButton_2.MouseButton1Click:Connect(function()
+	if TextBox.Text == KeyCode then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/KeySystem", true))();
+	else
+		print("Wrong key")
+	end
+end)
 
 UICorner_2.Parent = TextButton_2
 
