@@ -107,9 +107,8 @@ TextButton_2.TextSize = 20.000
 TextButton_2.MouseButton1Click:Connect(function()
 	if TextBox.Text == KeyCode then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
-		KeyMenu:Destroy()
 	else
-		TextBox.Text == ""
+		print("Wrong key")
 	end
 end)
 
