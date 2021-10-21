@@ -46,6 +46,7 @@ TextButton.Text = "X"
 TextButton.TextColor3 = Color3.fromRGB(111, 111, 111)
 TextButton.TextSize = 14.000
 TextButton.MouseButton1Click:Connect(function()
+	print("Destroyed")
 	KeyMenu:Destroy()
 end)
 
