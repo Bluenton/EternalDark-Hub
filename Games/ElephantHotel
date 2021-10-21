@@ -42,7 +42,7 @@ TextButton.TextColor3 = Color3.fromRGB(111, 111, 111)
 TextButton.TextSize = 14.000
 TextButton.MouseButton1Click:Connect(function()
     print("destroy")
-	KeyMenu:Destroy()
+	Main:Destroy()
 end)
 
 TextLabel.Parent = TopBar
