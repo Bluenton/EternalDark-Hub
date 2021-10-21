@@ -15,7 +15,7 @@ local KeyCode = "BetaTester"
 --Properties:
 
 KeyMenu.Name = "KeyMenu"
-KeyMenu.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+KeyMenu.Parent = game.CoreGui
 KeyMenu.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = KeyMenu
