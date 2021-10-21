@@ -10,7 +10,7 @@ local UICorner = Instance.new("UICorner")
 local TextButton_2 = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 
-local KeyCode = "TestCode"
+local KeyCode = "BetaTester"
 
 --Properties:
 
