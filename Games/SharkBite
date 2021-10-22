@@ -180,8 +180,9 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 	
 	while wait(1) do
 		if off == false then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.80281829834, 262.00128173828, -41.915214538574)
-			if game.Players.LocalPlayer.Team == game:GetService("Teams").Shark then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(115.36093139648, 261.185546875, -41.408596038818)
+			if game.Players.LocalPlayer.Team == game:GetService("Teams").Shark and WaitingTime == false then
+				WaitingTime = true
 				print("Teleporting!")
 				wait(1)
 				game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
