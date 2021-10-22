@@ -87,7 +87,13 @@ TextButton_2.Text = "Submit"
 TextButton_2.TextColor3 = Color3.fromRGB(193, 193, 193)
 TextButton_2.TextSize = 20.000
 TextButton_2.MouseButton1Click:Connect(function()
-    game.ReplicatedStorage.MoneyRequest:FireServer(false, TextBoxAmount.Text, "Cash", game.Players[TextBoxName.Text])
+	if TextBoxName.Text == "(all)" then
+		for _,v in pairs(game.Players:GetChildren()) do
+			game.ReplicatedStorage.MoneyRequest:FireServer(false, TextBoxAmount.Text, "Cash", v)
+		end
+	else
+		game.ReplicatedStorage.MoneyRequest:FireServer(false, TextBoxAmount.Text, "Cash", game.Players[TextBoxName.Text])
+	end
 end)
 
 UICorner.Parent = TextButton_2
