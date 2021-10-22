@@ -41,6 +41,10 @@ TextButton.Font = Enum.Font.SciFi
 TextButton.Text = "X"
 TextButton.TextColor3 = Color3.fromRGB(111, 111, 111)
 TextButton.TextSize = 14.000
+TextButton.MouseButton1Click:Connect(function()
+    print("destroy")
+	Main:Destroy()
+end)
 
 TextLabel.Parent = TopBar
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -173,10 +177,10 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 		end
 	end)
 	
-	while true do
+	while wait(1) do
         if off == false then
-            print("on")
-            wait(1)
+            --{Autofarm script}
+            --{coming soon}
         end
     end
 end
