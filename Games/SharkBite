@@ -177,8 +177,8 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 		end
 	end)
 	
-	while wait(0.5) do
-		while off == false do
+	while wait(1) do
+		if off == false then
 			local WaitingTime = false
 			if game.Players.LocalPlayer.Team == game:GetService("Teams").Survivor and WaitingTime == false then
 				WaitingTime = true
