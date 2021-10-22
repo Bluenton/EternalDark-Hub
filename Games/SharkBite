@@ -173,9 +173,11 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 		end
 	end)
 	
-	while off == false do
-		print("On")
-		wait(1)
-	end
+	while true do
+        if off == false then
+            print("on")
+            wait(1)
+        end
+    end
 end
 coroutine.wrap(AFEI_fake_script)()
