@@ -185,11 +185,15 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 				wait(50)
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.80281829834, 262.00128173828, -41.915214538574)
 			elseif game.Players.LocalPlayer.Team == game:GetService("Teams").Shark then
+				print("Teleporting!")
 				wait(1)
-				queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/AutoFarms/SharkBite", true))()')
-				local ts = game:GetService("TeleportService")
-				local p = game:GetService("Players").LocalPlayer
-				ts:Teleport(game.PlaceId, p)
+				game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+					if State == Enum.TeleportState.Started then
+						syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/AutoFarms/SharkBite", true))()')
+					end
+				end)
+				local TeleportService = game:GetService("TeleportService")
+				TeleportService:Teleport(game.PlaceId)
 			elseif game.Players.LocalPlayer.Team == game:GetService("Teams").Lobby and WaitingTime == true then
 				WaitingTime = false
 				Print("Waiting for next round!")
