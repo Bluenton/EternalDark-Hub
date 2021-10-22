@@ -179,6 +179,7 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 	
 	while wait(1) do
 		if off == false then
+			wait(1) until game:IsLoaded() 
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(115.36093139648, 261.185546875, -41.408596038818)
 			if game.Players.LocalPlayer.Team == game:GetService("Teams").Shark and WaitingTime == false then
 				WaitingTime = true
