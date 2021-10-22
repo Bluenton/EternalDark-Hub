@@ -84,14 +84,14 @@ Status.BackgroundTransparency = 1.000
 Status.Position = UDim2.new(0.173646227, 0, 0.659999967, 0)
 Status.Size = UDim2.new(0.651108801, 0, 0.1746113, 0)
 Status.Font = Enum.Font.SpecialElite
-Status.Text = "Autofarm Disabled!"
+Status.Text = "Autofarm Enabled!"
 Status.TextColor3 = Color3.fromRGB(255, 255, 255)
 Status.TextSize = 25.000
 Status.TextWrapped = true
 
 ToggleFrame.Name = "ToggleFrame"
 ToggleFrame.Parent = Main_2
-ToggleFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ToggleFrame.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 ToggleFrame.Position = UDim2.new(0.379061371, 0, 0.405109495, 0)
 ToggleFrame.Size = UDim2.new(0, 134, 0, 46)
 
@@ -102,7 +102,7 @@ ToggleButton.Name = "ToggleButton"
 ToggleButton.Parent = ToggleFrame
 ToggleButton.AnchorPoint = Vector2.new(0.5, 0.5)
 ToggleButton.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
-ToggleButton.Position = UDim2.new(0.165000007, 0, 0.5, 0)
+ToggleButton.Position = UDim2.new(0.837000007, 0, 0.5, 0)
 ToggleButton.Size = UDim2.new(0, 42, 0, 42)
 ToggleButton.AutoButtonColor = false
 ToggleButton.Font = Enum.Font.SourceSans
@@ -138,8 +138,8 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 
 	local object = script.Parent
 	object.AnchorPoint = Vector2.new(0.5, 0.5)
-	object.Position = UDim2.new(0.165, 0, 0.5, 0)
-	local off = true
+	object.Position = UDim2.new(0.837, 0, 0.5, 0)
+	local off = false
 	local pleaseWait = false
 	
 	
@@ -179,8 +179,18 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 	
 	while wait(1) do
         if off == false then
-            --{Autofarm script}
-            --{coming soon}
+			while true do
+				if game.Players.LocalPlayer.Team == Teams.Survivor then
+					wait(50)
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.80281829834, 262.00128173828, -41.915214538574)
+				elseif game.Players.LocalPlayer.Team == Teams.Shark then
+					wait(20)
+					queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/Games/SharkBite", true))()')
+					local ts = game:GetService("TeleportService")
+					local p = game:GetService("Players").LocalPlayer
+					ts:Teleport(game.PlaceId, p)
+				end
+			end
         end
     end
 end
