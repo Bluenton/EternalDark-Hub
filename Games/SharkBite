@@ -178,15 +178,14 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 	end)
 	
 	while wait(1) do
+		local WaitingTime = false
 		if off == false then
-			local WaitingTime = false
 			if game.Players.LocalPlayer.Team == game:GetService("Teams").Survivor and WaitingTime == false then
 				WaitingTime = true
 				wait(50)
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.80281829834, 262.00128173828, -41.915214538574)
-			elseif game.Players.LocalPlayer.Team == game:GetService("Teams").Shark and WaitingTime == false then
-				WaitingTime = true
-				wait(20)
+			elseif game.Players.LocalPlayer.Team == game:GetService("Teams").Shark then
+				wait(5)
 				queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/Games/SharkBite", true))()')
 				local ts = game:GetService("TeleportService")
 				local p = game:GetService("Players").LocalPlayer
