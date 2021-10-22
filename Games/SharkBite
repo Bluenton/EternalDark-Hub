@@ -1,1 +1,181 @@
-{script}
+local Main = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local Main_2 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local Status = Instance.new("TextLabel")
+local ToggleFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local ToggleButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+
+--Properties:
+
+Main.Name = "Main"
+Main.Parent = game.CoreGui
+Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.286201656, 0, 0.312883437, 0)
+Frame.Size = UDim2.new(0, 554, 0, 304)
+Frame.Active = true
+Frame.Draggable = true
+
+TopBar.Name = "TopBar"
+TopBar.Parent = Frame
+TopBar.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+TopBar.BorderSizePixel = 0
+TopBar.Size = UDim2.new(0, 554, 0, 30)
+
+TextButton.Parent = TopBar
+TextButton.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.945238113, 0, 0, 0)
+TextButton.Size = UDim2.new(0.0547619015, 0, 1, 0)
+TextButton.AutoButtonColor = false
+TextButton.Font = Enum.Font.SciFi
+TextButton.Text = "X"
+TextButton.TextColor3 = Color3.fromRGB(111, 111, 111)
+TextButton.TextSize = 14.000
+
+TextLabel.Parent = TopBar
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(0.369047582, 0, 0.913043499, 0)
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.Text = "EternalDarkness Hub"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Main_2.Name = "Main"
+Main_2.Parent = Frame
+Main_2.BackgroundColor3 = Color3.fromRGB(194, 194, 194)
+Main_2.BackgroundTransparency = 1.000
+Main_2.BorderSizePixel = 0
+Main_2.Position = UDim2.new(0, 0, 0.0986842141, 0)
+Main_2.Size = UDim2.new(0, 554, 0, 274)
+
+TextLabel_2.Parent = Main_2
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.143000007, 0, 0.100000001, 0)
+TextLabel_2.Size = UDim2.new(0.714285672, 0, 0.306122452, 0)
+TextLabel_2.Font = Enum.Font.SpecialElite
+TextLabel_2.Text = "Shark Bite Menu"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+Status.Name = "Status"
+Status.Parent = Main_2
+Status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status.BackgroundTransparency = 1.000
+Status.Position = UDim2.new(0.173646227, 0, 0.659999967, 0)
+Status.Size = UDim2.new(0.651108801, 0, 0.1746113, 0)
+Status.Font = Enum.Font.SpecialElite
+Status.Text = "Autofarm Disabled!"
+Status.TextColor3 = Color3.fromRGB(255, 255, 255)
+Status.TextSize = 25.000
+Status.TextWrapped = true
+
+ToggleFrame.Name = "ToggleFrame"
+ToggleFrame.Parent = Main_2
+ToggleFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ToggleFrame.Position = UDim2.new(0.379061371, 0, 0.405109495, 0)
+ToggleFrame.Size = UDim2.new(0, 134, 0, 46)
+
+UICorner.CornerRadius = UDim.new(1, 0)
+UICorner.Parent = ToggleFrame
+
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Parent = ToggleFrame
+ToggleButton.AnchorPoint = Vector2.new(0.5, 0.5)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+ToggleButton.Position = UDim2.new(0.165000007, 0, 0.5, 0)
+ToggleButton.Size = UDim2.new(0, 42, 0, 42)
+ToggleButton.AutoButtonColor = false
+ToggleButton.Font = Enum.Font.SourceSans
+ToggleButton.Text = ""
+ToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton.TextSize = 14.000
+
+UICorner_2.CornerRadius = UDim.new(1, 0)
+UICorner_2.Parent = ToggleButton
+
+-- Scripts:
+
+local function HIRCUP_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	script.Parent.MouseEnter:Connect(function()
+		script.Parent.BackgroundColor3 = Color3.new(0.223529, 0.223529, 0.223529)
+	end)
+	
+	script.Parent.MouseLeave:Connect(function()
+		script.Parent.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	end)
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.BackgroundColor3 = Color3.new(1, 0, 0.0156863)
+		wait(0.02)
+		script.Parent.BackgroundColor3 = Color3.new(0.282353, 0.282353, 0.282353)
+	end)
+end
+coroutine.wrap(HIRCUP_fake_script)()
+local function AFEI_fake_script() -- ToggleButton.LocalScript 
+	local script = Instance.new('LocalScript', ToggleButton)
+
+	local object = script.Parent
+	object.AnchorPoint = Vector2.new(0.5, 0.5)
+	object.Position = UDim2.new(0.165, 0, 0.5, 0)
+	local off = true
+	local pleaseWait = false
+	
+	
+	object.MouseButton1Click:Connect(function()
+		if off == true and pleaseWait == false then
+			pleaseWait = true
+			off = false
+			local Part = script.Parent.Parent
+			Part.BackgroundColor3 = Color3.new(1, 0, 0)
+	
+			local TS = game:GetService("TweenService")
+			local Info = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
+	
+			TS:Create(Part, Info, {BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+			object:TweenPosition(UDim2.new(0.837, 0, 0.5, 0))
+			script.Parent.Parent.Parent.Status.Text = "Autofarm Enabled!"
+			wait(1.2)
+			pleaseWait = false
+		elseif off == false and pleaseWait == false then
+			pleaseWait = true
+			off = true
+			local Part = script.Parent.Parent
+			Part.BackgroundColor3 = Color3.new(0, 1, 0)
+	
+			local TS = game:GetService("TweenService")
+			local Info = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0, false, 0)
+	
+			TS:Create(Part, Info, {BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+			object:TweenPosition(UDim2.new(0.165, 0, 0.5, 0))
+			script.Parent.Parent.Parent.Status.Text = "Autofarm Disabled!"
+			wait(1.2)
+			pleaseWait = false
+		else
+			print("Wait!")
+		end
+	end)
+	
+	while off == false do
+		print("On")
+		wait(1)
+	end
+end
+coroutine.wrap(AFEI_fake_script)()
