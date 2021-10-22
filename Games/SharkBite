@@ -193,6 +193,8 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 			elseif game.Players.LocalPlayer.Team == game:GetService("Teams").Lobby and WaitingTime == true then
 				WaitingTime = false
 				Print("Waiting for next round!")
+			else
+				print("-")
 			end
 		end
 		local vu = game:GetService("VirtualUser")
