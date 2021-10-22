@@ -23,6 +23,8 @@ Frame.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.286201656, 0, 0.312883437, 0)
 Frame.Size = UDim2.new(0, 554, 0, 304)
+Frame.Active = true
+Frame.Draggable = true
 
 TopBar.Name = "TopBar"
 TopBar.Parent = Frame
