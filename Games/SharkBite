@@ -177,21 +177,25 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 		end
 	end)
 	
-	while wait(1) do
-        if off == false then
-			while true do
-				if game.Players.LocalPlayer.Team == Teams.Survivor then
-					wait(50)
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.80281829834, 262.00128173828, -41.915214538574)
-				elseif game.Players.LocalPlayer.Team == Teams.Shark then
-					wait(20)
-					queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/Games/SharkBite", true))()')
-					local ts = game:GetService("TeleportService")
-					local p = game:GetService("Players").LocalPlayer
-					ts:Teleport(game.PlaceId, p)
-				end
+	while wait(0.5) do
+		while off == false do
+			local WaitingTime = false
+			if game.Players.LocalPlayer.Team == game:GetService("Teams").Survivor and WaitingTime == false then
+				WaitingTime = true
+				wait(50)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(116.80281829834, 262.00128173828, -41.915214538574)
+			elseif game.Players.LocalPlayer.Team == game:GetService("Teams").Shark and WaitingTime == false then
+				WaitingTime = true
+				wait(20)
+				queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/Games/SharkBite", true))()')
+				local ts = game:GetService("TeleportService")
+				local p = game:GetService("Players").LocalPlayer
+				ts:Teleport(game.PlaceId, p)
+			elseif game.Players.LocalPlayer.Team == game:GetService("Teams").Lobby and WaitingTime == true then
+				WaitingTime = false
+				Print("Waiting for next round!")
 			end
-        end
+		end
     end
 end
 coroutine.wrap(AFEI_fake_script)()
