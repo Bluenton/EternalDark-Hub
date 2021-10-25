@@ -9,6 +9,9 @@ local TextBox = Instance.new("TextBox")
 local UICorner = Instance.new("UICorner")
 local TextButton_2 = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
+local getKey = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local copy = Instance.new("TextLabel")
 
 --Properties:
 
@@ -119,8 +122,26 @@ getKey.Font = Enum.Font.SciFi
 getKey.Text = "Get Key"
 getKey.TextColor3 = Color3.fromRGB(193, 193, 193)
 getKey.TextSize = 20.000
+getKey.MouseButton1Click:Connect(function()
+	setclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
+	toclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
+end)
 
 UICorner_3.Parent = getKey
+
+copy.Name = "copy"
+copy.Parent = KeySystem
+copy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+copy.BackgroundTransparency = 1.000
+copy.Position = UDim2.new(0.249999985, 0, 0.869938433, 0)
+copy.Size = UDim2.new(0.476000011, 0, 0.109999999, 0)
+copy.Visible = false
+copy.Font = Enum.Font.SciFi
+copy.Text = "Copied to clipboard"
+copy.TextColor3 = Color3.fromRGB(255, 255, 255)
+copy.TextScaled = true
+copy.TextSize = 14.000
+copy.TextWrapped = true
 
 -- Scripts:
 
