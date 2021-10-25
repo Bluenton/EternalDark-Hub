@@ -84,7 +84,7 @@ Status.BackgroundTransparency = 1.000
 Status.Position = UDim2.new(0.173646227, 0, 0.659999967, 0)
 Status.Size = UDim2.new(0.651108801, 0, 0.1746113, 0)
 Status.Font = Enum.Font.SpecialElite
-Status.Text = "AutoClick Enabled!"
+Status.Text = "AutoClick Disabled!"
 Status.TextColor3 = Color3.fromRGB(255, 255, 255)
 Status.TextSize = 25.000
 Status.TextWrapped = true
@@ -177,7 +177,7 @@ local function AFEI_fake_script() -- ToggleButton.LocalScript
 		end
 	end)
 	
-	while wait(1) do
+	while wait(.1) do
 		if off == false then
 			game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 1)
             game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 2)
