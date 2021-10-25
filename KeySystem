@@ -125,6 +125,9 @@ getKey.TextSize = 20.000
 getKey.MouseButton1Click:Connect(function()
 	setclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
 	toclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
+	copy.Visible = true
+	wait(1)
+	copy.Visible = false
 end)
 
 UICorner_3.Parent = getKey
