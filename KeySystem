@@ -93,8 +93,8 @@ UICorner.Parent = TextBox
 
 TextButton_2.Parent = KeySystem
 TextButton_2.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
-TextButton_2.Position = UDim2.new(0.25, 0, 0.699999988, 0)
-TextButton_2.Size = UDim2.new(0.476190448, 0, 0.127551019, 0)
+TextButton_2.Position = UDim2.new(0.249999985, 0, 0.699999988, 0)
+TextButton_2.Size = UDim2.new(0.228571415, 0, 0.127551019, 0)
 TextButton_2.Font = Enum.Font.SciFi
 TextButton_2.Text = "Submit"
 TextButton_2.TextColor3 = Color3.fromRGB(193, 193, 193)
@@ -109,6 +109,18 @@ TextButton_2.MouseButton1Click:Connect(function()
 end)
 
 UICorner_2.Parent = TextButton_2
+
+getKey.Name = "getKey"
+getKey.Parent = KeySystem
+getKey.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+getKey.Position = UDim2.new(0.5, 0, 0.699999988, 0)
+getKey.Size = UDim2.new(0.228571415, 0, 0.127551019, 0)
+getKey.Font = Enum.Font.SciFi
+getKey.Text = "Get Key"
+getKey.TextColor3 = Color3.fromRGB(193, 193, 193)
+getKey.TextSize = 20.000
+
+UICorner_3.Parent = getKey
 
 -- Scripts:
 
