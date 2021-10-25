@@ -113,25 +113,6 @@ end)
 
 UICorner_2.Parent = TextButton_2
 
-getKey.Name = "getKey"
-getKey.Parent = KeySystem
-getKey.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
-getKey.Position = UDim2.new(0.5, 0, 0.699999988, 0)
-getKey.Size = UDim2.new(0.228571415, 0, 0.127551019, 0)
-getKey.Font = Enum.Font.SciFi
-getKey.Text = "Get Key"
-getKey.TextColor3 = Color3.fromRGB(193, 193, 193)
-getKey.TextSize = 20.000
-getKey.MouseButton1Click:Connect(function()
-	setclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
-	toclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
-	copy.Visible = true
-	wait(1)
-	copy.Visible = false
-end)
-
-UICorner_3.Parent = getKey
-
 copy.Name = "copy"
 copy.Parent = KeySystem
 copy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -145,6 +126,25 @@ copy.TextColor3 = Color3.fromRGB(255, 255, 255)
 copy.TextScaled = true
 copy.TextSize = 14.000
 copy.TextWrapped = true
+
+getKey.Name = "getKey"
+getKey.Parent = KeySystem
+getKey.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+getKey.Position = UDim2.new(0.5, 0, 0.699999988, 0)
+getKey.Size = UDim2.new(0.228571415, 0, 0.127551019, 0)
+getKey.Font = Enum.Font.SciFi
+getKey.Text = "Get Key"
+getKey.TextColor3 = Color3.fromRGB(193, 193, 193)
+getKey.TextSize = 20.000
+getKey.MouseButton1Click:Connect(function()
+	copy.Visible = true
+	wait(0.5)
+	copy.Visible = false
+	setclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
+	toclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
+end)
+
+UICorner_3.Parent = getKey
 
 -- Scripts:
 
