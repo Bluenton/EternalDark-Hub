@@ -100,7 +100,7 @@ TextButton_2.Text = "Submit"
 TextButton_2.TextColor3 = Color3.fromRGB(193, 193, 193)
 TextButton_2.TextSize = 20.000
 TextButton_2.MouseButton1Click:Connect(function()
-	if TextBox.Text == game:HttpGet("https://raw.githubusercontent.com/EternalDarkness-Hub/EternalDrakness-Hub-KeySystem/main/Key.txt") then
+	if TextBox.Text == game:HttpGet("https://raw.githubusercontent.com/EternalDarkness-Hub/EternalDrakness-Hub-KeySystem/main/Key") then
 		KeyMenu:Destroy()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
 	else
