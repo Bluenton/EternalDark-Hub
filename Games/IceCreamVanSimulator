@@ -24,7 +24,7 @@ section1:addToggle("Buy", false, function(value)
     on = value
 end)
 
-section1:addSlider("Amount", 0, 0, 100, function(value)
+section1:addSlider("Amount", 0, 0, 10000, function(value)
     Amount = value
 end)
 
