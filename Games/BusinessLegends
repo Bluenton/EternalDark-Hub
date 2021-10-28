@@ -17,35 +17,15 @@ local page = BluentonCraft:addPage("Farming", 5012544693)
 local section1 = page:addSection("AutoClick")
 local section2 = page:addSection("Settings")
 local WaitingTime = false
+local on = nil
+local on2 = nil
 
 section1:addToggle("Click", false, function(value)
-    if value == true then
-        while wait(0.1) do
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 1)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 2)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 3)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 4)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 5)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 6)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 7)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 8)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 9)
-            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 10)
-        end
-    end
+    on = value
 end)
 
 section2:addToggle("AFK", nil, function(value)
-    while wait(.1) do
-        if value == true then
-            local vu = game:GetService("VirtualUser")
-            game:GetService("Players").LocalPlayer.Idled:connect(function()
-                vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-                wait(1)
-                vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-            end)
-        end
-    end
+    on2 = value
 end)
 
 if focusLost then
@@ -67,6 +47,32 @@ settings:addKeybind("Toggle Keybind", Enum.KeyCode.BackSlash, function()
 BluentonCraft:toggle()
 end, function()
 end)
+
+while wait(0.1) do
+    if on == true then
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 1)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 2)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 3)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 4)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 5)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 6)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 7)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 8)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 9)
+        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 10)
+    end
+end
+
+while wait(0.1) do
+    if on2 == true then
+        local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        end)
+    end
+end
 
 -- load
 BluentonCraft:SelectPage(venyx.pages[1], true)
