@@ -36,12 +36,6 @@ section1:addTextbox("IceCream Flavor", "", function(value)
     Flavor = value
 end)
 
-while wait(0.1) do
-    if on == true then
-        game:GetService("ReplicatedStorage").RemoteEvents.PurchaseIceCream:InvokeServer(Type, Flavor, Amount)
-    end
-end
-
 -- second page
 local theme = BluentonCraft:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
@@ -57,5 +51,11 @@ settings:addKeybind("Toggle Keybind", Enum.KeyCode.BackSlash, function()
 BluentonCraft:toggle()
 end, function()
 end)
+
+while wait(0.1) do
+    if on == true then
+        game:GetService("ReplicatedStorage").RemoteEvents.PurchaseIceCream:InvokeServer(Type, Flavor, Amount)
+    end
+end
 
 BluentonCraft:SelectPage(venyx.pages[1], true)
