@@ -3,7 +3,8 @@ local URL = "https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/Gam
 local games = {
     [23578803] = "ElephantHotel",
     [734159876] = "SharkBite",
-    [5551657553] = "BusinessLegends"
+    [5551657553] = "BusinessLegends",
+    [2970570231] = "IceCreamVanSimulator"
 }
 
 for i,v in next, games do
