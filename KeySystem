@@ -13,7 +13,7 @@ end)
 
 textbs:Button("Submit", function()
     if key == game:HttpGet("https://raw.githubusercontent.com/EternalDarkness-Hub/EternalDarkness-Hub.github.io/main/KeySystem/Key.txt") then
-        win:Destroy
+        win:Destroy()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
     else
         print("Wrong Key!")
