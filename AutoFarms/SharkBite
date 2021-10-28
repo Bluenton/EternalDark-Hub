@@ -20,6 +20,7 @@ local WaitingTime = false
 
 section1:addToggle("Farm", true, function(value)
 	spawn(function()
+		repeat wait(.1) until Game:IsLoaded()
 		while wait(1) do
 			if value == true then
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(115.36093139648, 261.185546875, -41.408596038818)
