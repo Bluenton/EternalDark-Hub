@@ -18,19 +18,11 @@ local section1 = page:addSection("Movement")
 
 section1:addSlider("Speed", 16, 16, 100, function(value)
     local Player = game:service'Players'.LocalPlayer;
-    Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
-        wait(.5)
-        Player.Character.Humanoid.WalkSpeed = value;
-    end)
     Player.Character.Humanoid.WalkSpeed = value;
 end)
 
 section1:addSlider("Jump Power", 50, 50, 100, function(value)
     local Player = game:service'Players'.LocalPlayer;
-    Player.Character.Humanoid:GetPropertyChangedSignal'JumpPower':Connect(function()
-        wait(.5)
-        Player.Character.Humanoid.JumpPower = value;
-    end)
     Player.Character.Humanoid.JumpPower = value;
 end)
 
