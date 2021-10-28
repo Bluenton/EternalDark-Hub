@@ -19,31 +19,35 @@ local section2 = page:addSection("Settings")
 local WaitingTime = false
 
 section1:addToggle("Click", false, function(value)
-    while wait(0.1) do
-		game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 1)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 2)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 3)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 4)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 5)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 6)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 7)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 8)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 9)
-        game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 10)
-    end
+    spawn(function()
+        while wait(0.1) do
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 1)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 2)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 3)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 4)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 5)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 6)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 7)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 8)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 9)
+            game:GetService("ReplicatedStorage").Events.JobEvent:FireServer("Work", 10)
+        end
+    end)
 end)
 
 section2:addToggle("AFK", nil, function(value)
-    while wait(.1) do
-        if value == true then
-            local vu = game:GetService("VirtualUser")
-            game:GetService("Players").LocalPlayer.Idled:connect(function()
-                vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-                wait(1)
-                vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-            end)
+    spawn(function()
+        while wait(.1) do
+            if value == true then
+                local vu = game:GetService("VirtualUser")
+                game:GetService("Players").LocalPlayer.Idled:connect(function()
+                    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+                    wait(1)
+                    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+                end)
+            end
         end
-    end
+    end)
 end)
 
 if focusLost then
