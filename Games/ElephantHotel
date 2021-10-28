@@ -29,7 +29,7 @@ section1:addSlider("Amount", 0, 0, 100000000000, function(value)
     Amount = value
 end)
 
-section1:addTextbox("Player", "", function(value)
+section1:addTextbox('Player (or type "all" for all players)', "", function(value)
     Player = value
 end)
 
