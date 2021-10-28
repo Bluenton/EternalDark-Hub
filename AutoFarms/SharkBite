@@ -19,41 +19,37 @@ local section2 = page:addSection("Settings")
 local WaitingTime = false
 
 section1:addToggle("Farm", true, function(value)
-	spawn(function()
-		repeat wait(.1) until Game:IsLoaded()
-		while wait(1) do
-			if value == true then
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(115.36093139648, 261.185546875, -41.408596038818)
-				if game.Players.LocalPlayer.Team == game:GetService("Teams").Shark and WaitingTime == false then
-					WaitingTime = true
-					print("Teleporting!")
-					wait(1)
-					game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
-						if State == Enum.TeleportState.Started then
-							syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/AutoFarms/SharkBite", true))()')
-						end
-					end)
-					local TeleportService = game:GetService("TeleportService")
-					TeleportService:Teleport(game.PlaceId)
-				end
+	repeat wait(.1) until Game:IsLoaded()
+	while wait(1) do
+		if value == true then
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(115.36093139648, 261.185546875, -41.408596038818)
+			if game.Players.LocalPlayer.Team == game:GetService("Teams").Shark and WaitingTime == false then
+				WaitingTime = true
+				print("Teleporting!")
+				wait(1)
+				game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+					if State == Enum.TeleportState.Started then
+						syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/AutoFarms/SharkBite", true))()')
+					end
+				end)
+				local TeleportService = game:GetService("TeleportService")
+				TeleportService:Teleport(game.PlaceId)
 			end
 		end
-	end)
+	end
 end)
 
 section2:addToggle("AFK", true, function(value)
-	spawn(function()
-		while wait(0.1) do
-			if value == true then
-				local vu = game:GetService("VirtualUser")
-				game:GetService("Players").LocalPlayer.Idled:connect(function()
-					vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-					wait(1)
-					vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-				end)
-			end
+	while wait(0.1) do
+		if value == true then
+			local vu = game:GetService("VirtualUser")
+			game:GetService("Players").LocalPlayer.Idled:connect(function()
+				vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+				wait(1)
+				vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+			end)
 		end
-	end)
+	end
 end)
 
 if focusLost then
