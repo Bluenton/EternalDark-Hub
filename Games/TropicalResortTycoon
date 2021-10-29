@@ -1,38 +1,86 @@
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local BluentonCraft = library.new("EternalDarkness Hub | Tropical Resort Tycoon", 7849724868)
+
+-- themes
+local themes = {
+Background = Color3.fromRGB(24, 24, 24),
+Glow = Color3.fromRGB(0, 0, 0),
+Accent = Color3.fromRGB(10, 10, 10),
+LightContrast = Color3.fromRGB(20, 20, 20),
+DarkContrast = Color3.fromRGB(14, 14, 14),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local page = BluentonCraft:addPage("Farm", 5012544693)
+local section1 = page:addSection("AutoFarm")
+local on = nil
+local WaitingTime = false
 local time = 8
 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1581.5756835938, 14.848644256592, 2020.5369873047)
-wait(2)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1516.8782958984, 24.848643302917, 2045.5834960938)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1333.1654052734, 28.933885574341, 2054.466796875)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1212.2669677734, 28.933885574341, 2049.3640136719)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1120.4945068359, 28.681903839111, 1878.7799072266)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(988.37548828125, 28.693441390991, 1854.9349365234)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(894.47485351563, 28.948659896851, 1701.8863525391)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1114.3266601563, 29.272211074829, 1643.1455078125)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1230.8063964844, 17.931541442871, 1582.3525390625)
-game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):MoveTo(Vector3.new(1326.1101074219, 17.93140411377, 1309.9189453125))
-wait(8)
-game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):MoveTo(Vector3.new(1326.1101074219, 17.93140411377, 1309.9189453125))
-wait(8)
-game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):MoveTo(Vector3.new(1326.1101074219, 17.93140411377, 1309.9189453125))
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1246.0341796875, 87.735290527344, 1213.3367919922)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1186.9676513672, 87.735290527344, 1096.6926269531)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1084.1096191406, 119.14642333984, 1063.1708984375)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(979.24822998047, 147.84642028809, 1218.474609375)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1042.4445800781, 147.23965454102, 1386.3653564453)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1189.1120605469, 171.75439453125, 1349.6245117188)
-wait(time)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1098.4425048828, 196.28440856934, 1269.4099121094)
+section1:addToggle("Auto Complete Obby", false, function(value)
+    on = value
+end)
+
+-- second page
+local theme = BluentonCraft:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+local settings = theme:addSection("Settings")
+
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+colors:addColorPicker(theme, color, function(color3)
+BluentonCraft:setTheme(theme, color3)
+end)
+end
+
+settings:addKeybind("Toggle Keybind", Enum.KeyCode.BackSlash, function()
+BluentonCraft:toggle()
+end, function()
+end)
+
+while wait(0.1) do
+    if on == true and if WaitingTime == false then
+        WaitingTime = true
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1581.5756835938, 14.848644256592, 2020.5369873047)
+        wait(2)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1516.8782958984, 24.848643302917, 2045.5834960938)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1333.1654052734, 28.933885574341, 2054.466796875)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1212.2669677734, 28.933885574341, 2049.3640136719)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1120.4945068359, 28.681903839111, 1878.7799072266)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(988.37548828125, 28.693441390991, 1854.9349365234)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(894.47485351563, 28.948659896851, 1701.8863525391)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1114.3266601563, 29.272211074829, 1643.1455078125)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1230.8063964844, 17.931541442871, 1582.3525390625)
+        game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):MoveTo(Vector3.new(1326.1101074219, 17.93140411377, 1309.9189453125))
+        wait(8)
+        game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):MoveTo(Vector3.new(1326.1101074219, 17.93140411377, 1309.9189453125))
+        wait(8)
+        game:GetService('Players').LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid'):MoveTo(Vector3.new(1326.1101074219, 17.93140411377, 1309.9189453125))
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1246.0341796875, 87.735290527344, 1213.3367919922)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1186.9676513672, 87.735290527344, 1096.6926269531)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1084.1096191406, 119.14642333984, 1063.1708984375)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(979.24822998047, 147.84642028809, 1218.474609375)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1042.4445800781, 147.23965454102, 1386.3653564453)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1189.1120605469, 171.75439453125, 1349.6245117188)
+        wait(time)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1098.4425048828, 196.28440856934, 1269.4099121094)
+        wait(3)
+        WaitingTime = false
+    end
+end
+
+BluentonCraft:SelectPage(venyx.pages[1], true)
