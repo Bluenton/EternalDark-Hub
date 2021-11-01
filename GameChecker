@@ -4,8 +4,8 @@ local games = {
     [23578803] = "ElephantHotel",
     [734159876] = "SharkBite",
     [5551657553] = "BusinessLegends",
-    [2970570231] = "IceCreamVanSimulator",
-    [5534174456] = "TropicalResortTycoon"
+    [2970570231] = "IceCreamVanSimulator"
+    --[5534174456] = "TropicalResortTycoon"
 }
 
 for i,v in next, games do
