@@ -7,7 +7,8 @@ local games = {
     [2970570231] = "IceCreamVanSimulator",
     --[5534174456] = "TropicalResortTycoon",
     [142823291] = "MurderMystery2",
-    [6284583030] = "PetSimulatorX"
+    [6284583030] = "PetSimulatorX",
+    [606849621] = "Jailbreak"
 }
 
 for i,v in next, games do
