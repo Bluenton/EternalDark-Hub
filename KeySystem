@@ -7,11 +7,7 @@ local serv = win:Server("BluentonCraft", "")
 local textbs = serv:Channel("Log In")
 local key = nil
 
-textbs:Textbox("Key", "Press enter after you type the key!", true, function(value)
-    key = value
-end)
-
-textbs:Button("Submit", function()
+textbs:Textbox("Key", "Type Key", true, function(key)
     if key == game:HttpGet("https://raw.githubusercontent.com/EternalDarkness-Hub/EternalDarkness-Hub.github.io/main/KeySystem/Key.txt") then
         game.CoreGui.Discord:Destroy()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
