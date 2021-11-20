@@ -1,13 +1,13 @@
 local URL = "https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/Games"
 
 local games = {
-    [23578803] = "Elephant Hotel",
+    [23578803] = "ElephantHotel",
     [734159876] = "SharkBite",
-    [5551657553] = "Business Legends",
-    [2970570231] = "Ice Cream Van Simulator",
-    --[5534174456] = "Tropical Resort Tycoon",
-    [142823291] = "Murder Mystery 2",
-    [6284583030] = "Pet Simulator X",
+    [5551657553] = "BusinessLegends",
+    [2970570231] = "IceCreamVanSimulator",
+    --[5534174456] = "TropicalResortTycoon",
+    [142823291] = "MurderMystery2",
+    [6284583030] = "PetSimulatorX",
     [606849621] = "Jailbreak"
 }
 
