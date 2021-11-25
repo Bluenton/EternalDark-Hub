@@ -6,6 +6,7 @@ local serv = win:Server("BluentonCraft", "")
 
 local textbs = serv:Channel("Log In")
 local supported = serv:Channel("Supported Games")
+local info = serv:Channel("Information")
 local key = nil
 
 textbs:Textbox("Key", "Type Key", true, function(key)
@@ -33,3 +34,9 @@ supported:Label("Murder Mystery 2")
 supported:Label("Pet Simulator X")
 supported:Label("Hood Modded")
 supported:Label("Da Hood")
+supported:Label("SCPRoleplay")
+supported:Label("Arsenal")
+
+info:Label("Eternal Darkness hub is a script, that combines all best scripts in the internet.")
+info:Label("The main goal of the script is to make hacking easier, so you wouldn't need to spend your time searching for the script.")
+info:Label("Some scripts are made by me but most of them are by other people so big thx for them.")
