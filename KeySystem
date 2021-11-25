@@ -2,7 +2,7 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 
 local win = DiscordLib:Window("EternalDarkness Hub")
 
-local serv = win:Server("BluentonCraft", "")
+local serv = win:Server("Synapse X Chan", "")
 
 local textbs = serv:Channel("Log In")
 local supported = serv:Channel("Supported Games")
