@@ -37,6 +37,12 @@ supported:Label("Da Hood")
 supported:Label("SCPRoleplay")
 supported:Label("Arsenal")
 
-info:Label("Eternal Darkness hub is a script, that combines all best scripts in the internet.")
-info:Label("The main goal of the script is to make hacking easier, so you wouldn't need to spend your time searching for the script.")
-info:Label("Some scripts are made by me but most of them are by other people so big thx for them.")
+info:Label("Eternal Darkness hub combines all
+ best scripts in the internet.")
+info:Label("The main goal of the script
+ is to make hacking easier, so you
+  wouldn't need to spend your time
+   searching for the script.")
+info:Label("Some scripts are made by
+ me but most of them are by other
+  people so big thx to them.")
