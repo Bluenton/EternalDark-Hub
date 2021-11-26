@@ -15,7 +15,8 @@ local games = {
     [286090429] = "Arsenal",
     [537413528] = "BABFT",
     [6872265039] = "BedWars",
-    [6872274481] = "BedWars"
+    [6872274481] = "BedWars",
+    [662417684] = "LuckyBlock"
     
 }
 
