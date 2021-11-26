@@ -101,6 +101,7 @@ function loadSettings()
             venyx:Notify("Key System", "Auto Loged In")
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
         else
+            venyx:Notify("Key System", "Old key, type the new key!")
             print(" -- Key was wrong! -- ")
         end
     end
