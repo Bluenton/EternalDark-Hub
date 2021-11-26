@@ -29,6 +29,7 @@ end)
 
 section1:addButton("Submit", function()
     if key == game:HttpGet("https://raw.githubusercontent.com/EternalDarkness-Hub/EternalDarkness-Hub.github.io/main/KeySystem/Key.txt") then
+        saveSettings()
         venyx:Notify("Key System", "Correct Key!")
         venyx:toggle()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
@@ -87,6 +88,34 @@ request(abcdef)
 venyx:Notify("Contact", "message sent!")
 end)
 
+local filename = "EternalDarkness_Hub_settings.txt"
+
+function loadSettings()
+    print(" -- Trying Auto Log In! -- ")
+    local HttpService = game:GetService("HttpService")
+    if (readfile and isfile and isfile(filename)) then
+        key = HttpService:JSONDecode(readfile(filename))
+        if key == game:HttpGet("https://raw.githubusercontent.com/EternalDarkness-Hub/EternalDarkness-Hub.github.io/main/KeySystem/Key.txt") then
+            print(" -- loging in -- ")
+            venyx:toggle()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
+        else
+            print(" -- Key was wrong! -- ")
+        end
+    end
+end
+
+function saveSettings()
+    print(" -- Saving key! -- ")
+    local json
+    local HttpService = game:GetService("HttpService")
+    if (writefile) then
+        json = HttpService:JSONEncode(key)
+        writefile(filename, json)
+    else
+        print(" -- Error saving key! -- ")
+    end
+end
 
 -- load
 venyx:SelectPage(venyx.pages[1], true)
