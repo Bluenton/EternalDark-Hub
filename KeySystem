@@ -117,5 +117,7 @@ function saveSettings()
     end
 end
 
+loadSettings()
+
 -- load
 venyx:SelectPage(venyx.pages[1], true)
