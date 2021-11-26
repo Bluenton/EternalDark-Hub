@@ -14,7 +14,9 @@ local games = {
     [5041144419] = "SCPRoleplay",
     [286090429] = "Arsenal",
     [537413528] = "BABFT",
-    [6872265039] = "BedWars"
+    [6872265039] = "BedWars",
+    [6872274481] = "BedWars"
+    
 }
 
 for i,v in next, games do
