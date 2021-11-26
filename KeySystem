@@ -1,50 +1,49 @@
-local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/Bluenton-UI-Library/main/source.lua"))()
+local venyx = library.new("EternalDarkness Hub", 5013109572)
 
-local win = DiscordLib:Window("EternalDarkness Hub")
+-- themes
+local themes = {
+Background = Color3.fromRGB(24, 24, 24),
+Glow = Color3.fromRGB(0, 0, 0),
+Accent = Color3.fromRGB(10, 10, 10),
+LightContrast = Color3.fromRGB(20, 20, 20),
+DarkContrast = Color3.fromRGB(14, 14, 14),  
+TextColor = Color3.fromRGB(255, 255, 255)
+}
 
-local serv = win:Server("Synapse X Chan", "")
+-- first page
+local page = venyx:addPage("Main", 5012544693)
+local section1 = page:addSection("Log In")
+local section2 = page:addSection("Suported Games")
+local section3 = page:addSection("Information")
+local key = nill
 
-local textbs = serv:Channel("Log In")
-local supported = serv:Channel("Supported Games")
-local info = serv:Channel("Information")
-local key = nil
+section1:addTextbox("Key", "", function(value)
+    key = value
+end)
 
-textbs:Textbox("Key", "Type Key", true, function(key)
+section1:addButton("Submit", function()
     if key == game:HttpGet("https://raw.githubusercontent.com/EternalDarkness-Hub/EternalDarkness-Hub.github.io/main/KeySystem/Key.txt") then
-        game.CoreGui.Discord:Destroy()
+        venyx:Notify("Key System", "Correct Key!")
+        venyx:toggle()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
     else
-        print("Wrong Key!")
+        venyx:Notify("Key System", "Wrong Key!")
     end
 end)
 
-textbs:Button("Get Key", function()
-    DiscordLib:Notification("Notification", "Copied to clipboard!", "Okay")
+section1:addButton("Get Key", function()
+    venyx:Notify("Copied", "The link was copied\nhttps://eternaldarkness-hub.github.io/KeySystem/index.html")
     setclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
 	toclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
 end)
 
-supported:Label("Jailbreak")
-supported:Label("Elephant Hotel")
-supported:Label("SharkBite")
-supported:Label("Business Legends")
-supported:Label("Ice Cream Van Simulator")
-supported:Label("Tropical Resort Tycoon -- (Being Fixed)")
-supported:Label("Murder Mystery 2")
-supported:Label("Pet Simulator X")
-supported:Label("Hood Modded")
-supported:Label("Da Hood")
-supported:Label("SCP Roleplay")
-supported:Label("Arsenal")
-supported:Label("Build A Boat For Treasure")
-supported:Label("BedWars")
+section2:addLabel("Jailbreak\nElephant Hotel\nSharkBite\nBusiness Legends\nIce Cream Van Simulator\nTropical Resort Tycoon -- (Being Fixed)\nMurder Mystery 2\nPet Simulator X\nHood Modded\nDa Hood\nSCP Roleplay\nArsenal\nBuild A Boat For Treasure\nBedWars", 14)
 
-info:Label("Eternal Darkness hub combines all")
-info:Label("best scripts in the internet.")
-info:Label("The main goal of the script")
-info:Label("is to make hacking easier, so you")
-info:Label("wouldn't need to spend your time")
-info:Label("searching for the script.")
-info:Label("Some scripts are made by")
-info:Label("me but most of them are by other")
-info:Label("people so big thx to them.")
+section3:addLabel("Eternal Darkness hub combines all best scripts on the\n web. The main goal of the script is to make hacking\n easier, so you wouldn't need to spend your time searching\nfor the script. Some scripts are made by me but most\nof them are by other people so big thx to them.", 5)
+
+
+
+-- load
+venyx:SelectPage(venyx.pages[1], true)
