@@ -1,1 +1,2 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Build%20A%20Boat%20For%20Treasure/BABFT"))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/thombomb2009/butter-hub/main/butter%20hub.txt'))()
