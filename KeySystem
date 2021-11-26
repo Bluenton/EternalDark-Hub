@@ -14,10 +14,14 @@ TextColor = Color3.fromRGB(255, 255, 255)
 
 -- first page
 local page = venyx:addPage("Main", 5012544693)
+local page2 = venyx:addPage("Contact", 5012544693)
 local section1 = page:addSection("Log In")
 local section2 = page:addSection("Suported Games")
 local section3 = page:addSection("Information")
+local section4 = page2:addSection("Contact")
 local key = nill
+local msg = ""
+local msgtype = ""
 
 section1:addTextbox("Key", "", function(value)
     key = value
@@ -43,6 +47,44 @@ section2:addLabel("Jailbreak\nElephant Hotel\nSharkBite\nBusiness Legends\nIce C
 
 section3:addLabel("Eternal Darkness hub combines all best scripts on the\n web. The main goal of the script is to make hacking\n easier, so you wouldn't need to spend your time searching\nfor the script. Some scripts are made by me but most\nof them are by other people so big thx to them.", 5)
 
+section4:addDropdown("Reason", {"Broken script", "Request a game"}, function(value)
+    msgtype = value
+end)
+
+section4:addTextbox("Message","", function(value, focusLost)
+    if focusLost then
+    msg = value
+    end
+end)
+section4:addButton("Send", function()
+    local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
+
+local url =
+   "https://discord.com/api/webhooks/913782242319421490/JGHv5i_IDTuWWH0_7BfVqloN7WQ9gd7AxrcNZzmRz9HuJDAPvdbJsx5NF5iqgs5x73T6"
+local data = {
+   ["embeds"] = {
+       {
+           ["title"] = "New message from "..game.Players.LocalPlayer.Name.." using "..webhookcheck,
+           ["description"] = "Reason: "..msgtype.."\n\n"..msg,
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+end)
 
 
 -- load
