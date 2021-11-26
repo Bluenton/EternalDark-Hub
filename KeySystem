@@ -98,6 +98,7 @@ function loadSettings()
         if key == game:HttpGet("https://raw.githubusercontent.com/EternalDarkness-Hub/EternalDarkness-Hub.github.io/main/KeySystem/Key.txt") then
             print(" -- loging in -- ")
             venyx:toggle()
+            venyx:Notify("Key System", "Auto Loged In")
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/GameChecker", true))();
         else
             print(" -- Key was wrong! -- ")
