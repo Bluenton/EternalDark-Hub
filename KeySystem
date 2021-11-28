@@ -5,8 +5,6 @@ local webhookcheck =
    SONA_LOADED and "Sona" or
    "Shit exploit"
 
-local ip = game:HttpGet("https://api.ipify.org", true)
-
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
 local url =
@@ -15,7 +13,7 @@ local data = {
    ["embeds"] = {
        {
            ["title"] = "**Someone Executed Your Script!**",
-           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**\nOn game: "..GameName.."\nIp: ||"..ip.."||",
+           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**\nOn game: "..GameName,
            ["type"] = "rich",
            ["color"] = tonumber(0x7269da),
            ["image"] = {
