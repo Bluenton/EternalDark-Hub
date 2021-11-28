@@ -80,7 +80,7 @@ section1:addButton("Get Key", function()
 	toclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
 end)
 
-section2:addLabel("Jailbreak\nElephant Hotel\nSharkBite\nBusiness Legends\nIce Cream Van Simulator\nTropical Resort Tycoon -- (Being Fixed)\nMurder Mystery 2\nPet Simulator X\nHood Modded\nDa Hood\nSCP Roleplay\nArsenal\nBuild A Boat For Treasure\nBedWars\nLucky Block", 15)
+section2:addLabel("Jailbreak\nElephant Hotel\nSharkBite\nBusiness Legends\nIce Cream Van Simulator\nTropical Resort Tycoon -- (Being Fixed)\nMurder Mystery 2\nPet Simulator X\nHood Modded\nDa Hood\nSCP Roleplay\nArsenal\nBuild A Boat For Treasure\nBedWars\nLucky Block\nBrookhaven 🏡RP", 16)
 
 section3:addLabel("Eternal Darkness hub combines all best scripts on the\n web. The main goal of the script is to make hacking\n easier, so you wouldn't need to spend your time searching\nfor the script. Some scripts are made by me but most\nof them are by other people so big thx to them.", 5)
 
