@@ -18,7 +18,8 @@ local games = {
     [6872274481] = "BedWars",
     [662417684] = "LuckyBlock",
     [4924922222] = "Brookhaven",
-    [5104202731] = "SouthwestFlorida"
+    [5104202731] = "SouthwestFlorida",
+    [891852901] = "Greenville"
     
 }
 
