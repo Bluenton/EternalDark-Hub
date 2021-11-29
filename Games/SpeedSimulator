@@ -1,0 +1,1 @@
+loadstring(game:HttpGet('https://raw/githubusercontent.com/Xyokuro/SpeedSim/main/youda',true))()
