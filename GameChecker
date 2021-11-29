@@ -20,7 +20,8 @@ local games = {
     [4924922222] = "Brookhaven",
     [5104202731] = "SouthwestFlorida",
     [891852901] = "Greenville",
-    [1224212277] = "MadCity"
+    [1224212277] = "MadCity",
+    [7047488135] = "SpeedSimulator"
     
 }
 
