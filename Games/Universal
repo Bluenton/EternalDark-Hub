@@ -1,1 +1,1 @@
-loadstring(game:HttpGet('https://solarishub.dev/script.lua',true))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
