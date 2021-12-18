@@ -123,3 +123,15 @@ loadSettings()
 
 -- load
 venyx:SelectPage(venyx.pages[1], true)
+
+for i,v in pairs(game.Players:GetChildren()) do
+    if v.UserId == 479365632 then
+        venyx:Notify("System", "Script owner is in the game!")
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(v)
+    if v.UserId == 479365632 then
+        venyx:Notify("System", "Script owner joined the game!")
+    end
+end)
