@@ -135,3 +135,9 @@ game.Players.PlayerAdded:Connect(function(v)
         venyx:Notify("System", "Script owner joined the game!\n"..v.DisplayName)
     end
 end)
+
+game.Players.PlayerRemoving:Connect(function(v)
+    if v.UserId == 479365632 then
+        venyx:Notify("System", "Script owner left the game!\n"..v.DisplayName)
+    end
+end)
