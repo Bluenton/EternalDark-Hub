@@ -21,7 +21,8 @@ local games = {
     [891852901] = "Greenville",
     [1224212277] = "MadCity",
     [7047488135] = "SpeedSimulator",
-    [115797356] = "CounterBlox"
+    [115797356] = "CounterBlox",
+    [171391948] = "VehicleSimulator"
 }
 
 for i,v in next, games do
