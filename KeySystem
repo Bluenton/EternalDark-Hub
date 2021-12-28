@@ -16,7 +16,6 @@ TextColor = Color3.fromRGB(255, 255, 255)
 local page = venyx:addPage("Main", 5012544693)
 local page2 = venyx:addPage("Contact", 5012544693)
 local section1 = page:addSection("Log In")
-local section2 = page:addSection("Suported Games")
 local section3 = page:addSection("Information")
 local section4 = page2:addSection("Contact")
 local key = nill
@@ -43,8 +42,6 @@ section1:addButton("Get Key", function()
     setclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
 	toclipboard("https://eternaldarkness-hub.github.io/KeySystem/index.html")
 end)
-
-section2:addLabel("Jailbreak\nElephant Hotel\nSharkBite\nBusiness Legends\nIce Cream Van Simulator\nTropical Resort Tycoon\nMurder Mystery 2\nPet Simulator X\nHood Modded\nDa Hood\nSCP Roleplay\nArsenal\nBuild A Boat For Treasure\nBedWars\nLucky Block\nBrookhaven 🏡RP\nSouthwest Florida\nGreenville\nMad City\nSpeed Simulator\nCounter Blox", 21)
 
 section3:addLabel("Eternal Darkness hub combines all best scripts on the\n web. The main goal of the script is to make hacking\n easier, so you wouldn't need to spend your time searching\nfor the script. Scripts are not made by me, they are made \nby other people so big thx to them.", 5)
 
