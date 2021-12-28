@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Vanis252/valiantdhxd/main/.gitignore"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NOTLONTOP/DH/Hey/Target", true))()
