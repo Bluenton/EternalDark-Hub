@@ -138,3 +138,14 @@ game.Players.PlayerRemoving:Connect(function(v)
         venyx:Notify("System", "Script owner left the game!\n"..v.DisplayName)
     end
 end)
+
+while wait(0.1) do
+    if on == true then
+        local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        end)
+    end
+end
