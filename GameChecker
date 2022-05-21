@@ -28,7 +28,8 @@ local games = {
     [7456800858] = "Islands",
     [5530512077] = "HAST",
     [192800] = "WAPP",
-    [3956818381] = "NL"
+    [3956818381] = "NL",
+    [3351674303] = "DrivingEmpire"
 }
 
 for i,v in next, games do
