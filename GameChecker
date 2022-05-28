@@ -30,7 +30,8 @@ local games = {
     [192800] = "WAPP",
     [3956818381] = "NL",
     [3351674303] = "DrivingEmpire",
-    [7305309231] = "TaxiBoss"
+    [7305309231] = "TaxiBoss",
+    [2629642516] = "BitcoinMiner"
 }
 
 for i,v in next, games do
