@@ -1,4 +1,4 @@
-local URL = "https://raw.githubusercontent.com/Bluenton/EternalDark-Hub/main/Games"
+local URL = "https://raw.githubusercontent.com/GentlemanKitten/MrKitten/main/Games"
 
 local games = {
     [23578803] = "ElephantHotel",
